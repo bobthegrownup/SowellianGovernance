@@ -105,6 +105,9 @@ We guarantee incentives to ensure clarity for why someone should propose or vote
 - ROI **increases with contention** (closer 51/49 votes → higher returns).  
 - ROI **floor-guaranteed at +0.5%** in near-consensus cases (89–90%).  
 
+  ![VoterProposerROI](images/incentiverange.png)  
+- This example shows the range of return on a $20000 Stake Quorum Proposal
+
 ### Voter ROI Formula
 ```math
 R_v = \frac{(1-\tau)\,L}{W + 2B}
@@ -168,10 +171,10 @@ Sowellian parameters let organizations adapt to their needs.
 
 ## Appendix A: Charts
 - Voter vs Proposer ROI across contention  
-  ![Voter vs Proposer ROI](images/voter_proposer_roi.png)  
+  ![Voter vs Proposer ROI](images/roicontention.PNG)  
 
 - Treasury revenue across contention  
-  ![Treasury Revenue](images/treasury_revenue.png)  
+  ![Treasury Revenue](images/revenuecontention.PNG)  
 
 ---
 

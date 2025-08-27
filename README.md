@@ -19,7 +19,10 @@ The system is designed to align incentives, reward foresight, punish mistakes, a
 - Proposers compete to surface valuable ideas.  
 - Voters stake once to express belief.  
 - Change should always leave the organization better off.  
-- Reputation is a metric best measured through participation over time.  
+- Reputation is a metric best measured through participation over time.
+
+  
+![Workflow](images/sowellian_workflow_kpi.png) 
 
 ---
 

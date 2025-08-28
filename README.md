@@ -1,3 +1,5 @@
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
 # Sowellian Governance v5
 
 > *“There are no solutions. There are only trade-offs.”* — Thomas Sowell  
@@ -90,9 +92,10 @@ Every proposal must specify which KPI it targets and what improvement it expects
   - Remaining 99% split between voters and proposer.  
 
 ### Formula
-```math
+
+$$
 T = \tau \cdot L
-```
+$$
 
 - **T** = Treasury revenue  
 - **τ** = Treasury rake (default 1%)  
@@ -112,9 +115,9 @@ We guarantee incentives to ensure clarity for why someone should propose or vote
 - This example shows the range of return on a $20000 Stake Quorum Proposal
 
 ### Voter ROI Formula
-```math
-R_v = \frac{(1-\tau)\,L}{W + 2B}
-```
+$$
+R_v = \frac{(1-\tau)L}{W + 2B}
+$$
 
 - **Rᵥ** = voter ROI (fractional; ×100 for %)  
 - **W** = total winner stake  
@@ -129,9 +132,9 @@ R_v = \frac{(1-\tau)\,L}{W + 2B}
 - If quorum missed, bond forfeited to treasury.  
 
 ### Proposer ROI Formula
-```math
+$$
 R_p = 2 \cdot R_v
-```
+$$
 
 - **Rₚ** = proposer ROI (fractional; ×100 for %)  
 - Applies only when **YES** wins  
@@ -202,19 +205,38 @@ Sowellian parameters let organizations adapt to their needs.
 - **Rᵥ** — Voter ROI (fractional; ×100 for %)  
 - **Rₚ** — Proposer ROI (fractional; ×100 for %)  
 
-**Essential formulas (collected)**  
+**Essential formulas (collected)**
 
-```math
+### Treasury
+$$
 T = \tau \cdot L
-```
+$$
 
-```math
-R_v = \frac{(1-\tau)\,L}{W + 2B}
-```
+- **T** = Treasury revenue  
+- **τ** = Treasury rake (default 1%)  
+- **L** = Loser stake (total losing side)  
 
-```math
+---
+
+### Voter ROI
+$$
+R_v = \frac{(1-\tau)L}{W + 2B}
+$$
+
+- **Rᵥ** = voter ROI (fractional; ×100 for %)  
+- **W** = total winner stake  
+- **L** = total loser stake  
+- **B** = proposer bond (0.5–1.5% of quorum)  
+
+---
+
+### Proposer ROI
+$$
 R_p = 2 \cdot R_v
-```
+$$
+
+- **Rₚ** = proposer ROI (fractional; ×100 for %)  
+- Applies only when **YES** wins  
 
 ---
 

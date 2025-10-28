@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sowellian Governance v5</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css"/>
+  <style>
+    .markdown-body { box-sizing: border-box; min-width: 200px; max-width: 980px; margin: 0 auto; padding: 45px; }
+    @media (max-width: 767px) { .markdown-body { padding: 15px; } }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Sowellian Governance v5",
+    "author": {"@type":"Person","name":"BobTheGrownup"},
+    "datePublished": "2025-10-28",
+    "description": "A DAO governance system that ties proposals to KPIs, enforces skin-in-the-game via bonds and one-way bets, and grows treasuries with a 1% rake.",
+    "keywords": ["Sowellian Governance","prediction markets","DAO","KPIs","skin-in-the-game"],
+    "url": "https://bobthegrownup.github.io/SowellianGovernance/"
+  }
+  </script>
+</head>
+<body>
+  <article class="markdown-body">
+    <!-- README will be injected below -->
+  </article>
+  <script>
+    fetch('https://api.github.com/repos/bobthegrownup/SowellianGovernance/contents/README.md')
+      .then(r => r.json())
+      .then(d => atob(d.content))
+      .then(md => {
+        document.querySelector('.markdown-body').innerHTML = marked.parse(md);
+      });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</body>
+</html>

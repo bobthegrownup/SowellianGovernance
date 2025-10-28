@@ -40,35 +40,37 @@
     </div>
   </article>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-  <script>
-    // Fetch README.md
-    fetch('https://api.github.com/repos/bobthegrownup/SowellianGovernance/contents/README.md')
-      .then(r => r.json())
-      .then(data => atob(data.content))
-      .then(md => {
-        // Replace image paths: ![alt](image.png) → ![alt](https://raw.githubusercontent.com/.../image.png)
-        md = md.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (match, alt, src) => {
-          if (src.startsWith('http')) return match;
-          const full = `https://raw.githubusercontent.com/bobthegrownup/SowellianGovernance/main/${src}`;
-          return `![${alt}](${full})`;
-        });
-        const html = marked.parse(md);
-        document.getElementById('content').innerHTML = html;
-        // Render LaTeX
-        renderMathInElement(document.getElementById('content'), {
-          delimiters: [
-            {left: "$$", right: "$$", display: true},
-            {left: "$", right: "$", display: false},
-            {left: "\\[", right: "\\]", display: true},
-            {left: "\\(", right: "\\)", display: false}
-          ]
-        });
-      })
-      .catch(err => {
-        document.getElementById('content').innerHTML = `<p style="color:red;">Failed to load document. <a href="https://github.com/bobthegrownup/SowellianGovernance">View on GitHub</a></p>`;
+ <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+<script>
+  // Load RAW README.md directly (bypasses API)
+  fetch('https://raw.githubusercontent.com/bobthegrownup/SowellianGovernance/main/README.md')
+    .then(r => r.text())
+    .then(md => {
+      // Fix image paths: relative → full raw URL
+      md = md.replace(/!\[([^\]]*)\]\((?!http)([^)]+)\)/g, (match, alt, src) => {
+        return `![${alt}](https://raw.githubusercontent.com/bobthegrownup/SowellianGovernance/main/${src})`;
       });
-  </script>
+
+      const html = marked.parse(md);
+      document.getElementById('content').innerHTML = html;
+
+      // Render LaTeX
+      renderMathInElement(document.getElementById('content'), {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false},
+          {left: "\\[", right: "\\]", display: true},
+          {left: "\\(", right: "\\)", display: false}
+        ]
+      });
+    })
+    .catch(err => {
+      document.getElementById('content').innerHTML = `
+        <p style="color:red;">Failed to load. <a href="https://github.com/bobthegrownup/SowellianGovernance">View on GitHub</a></p>
+        <p><small>Error: ${err.message}</small></p>
+      `;
+    });
+</script>
 </body>
 </html>

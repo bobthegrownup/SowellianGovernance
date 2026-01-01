@@ -1,254 +1,111 @@
----
-title: Sowellian Governance v5
-layout: default
----
+# Sowellian Governance
 
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+One of my favourite quotes on decision making comes from Thomas Sowell  
+“It is hard to imagine a more stupid or more dangerous way of making decisions than by putting those decisions in the hands of people who pay no price for being wrong.”
 
-# Sowellian Governance v5
+Sowellian Governance aims to put this philosophy into practice. By using a novel betting mechanism for governance, organizations can align decisions and outcomes with skin in the game. If the decision is a good one, supporters get rewarded. If it is a bad one, they pay a price for being wrong.
 
-> *“There are no solutions. There are only trade-offs.”* — Thomas Sowell  
+Taking a page from Robin Hanson’s Futarchy model, Voters decide the top-level strategy and values of the organization, creating a rigid frame for tactical operations that get decided through betting.
 
----
+________________
 
-## Abstract
-Sowellian Governance is a system for decentralized and autonomous organizations that ties every proposal to measurable outcomes, enforces accountability through economic skin-in-the-game, and grows organizational treasuries through modest fees.  
+## Core Principles
 
-Organizations vote on their collective values, proposers risk bonds, voters stake once to express belief, and outcomes are settled against pre-defined Key Performance Indicators.  
+These Core Principles are what have helped guide the creation of this new system. Each one can be directly mapped to an element in the governance process.
 
-The system is designed to align incentives, reward foresight, punish mistakes, and strengthen organizations over time.  
+1. Those who make decisions must pay for mistakes.  
+All signaling is done through betting. If an idea has the most bets in its favor, the idea is implemented and, upon evaluation, the bet is resolved.
 
----
+2. Every organization has KPIs and proposals must target them. “Vote on values”  
+The most effective way to evaluate the result of a proposal is to objectively measure the outcome. Organizations vote on their values by selecting which KPIs are part of the proposal process. This ensures focus and alignment.
 
-## Guiding Principles
-- Organizations need clear KPIs to map proposals to.  
-- Those who make decisions must pay for mistakes.  
-- Proposers compete to surface valuable ideas.  
-- Voters stake once to express belief.  
-- Change should always leave the organization better off.  
-- Reputation is a metric best measured through participation over time.
+3. Proposers should compete to surface valuable ideas. Bettors should compete to support them. “Proposing with Purpose”  
+This is exemplified through the use of a time-weighted stake. The earlier your bet, the higher your reward (if correct). Proposers are defacto the earliest bet and enjoy the highest share of the rewards. This motivates proposers to be the first to share a good idea and bettors to be the first to support or oppose them.
 
-  
-![Workflow](images/sowellian_workflow_kpi.png) 
+4. Voters stake once to express belief. “Bet on beliefs”  
+To best ensure skin in the game, Sowellian governance requires that the bet is held until the outcome is evaluated. If it didn’t, there would be no risk for people to support a poor idea. Results matter and impact those that make the decision.
 
----
+5. Change should always leave the organization better off  
+This makes governance sustainable and prevents spam. Every proposal brings revenue to the treasury; either in the form of a proposal bond for missing quorum or in the form of a 1% rake from the losing bets.
 
-## Mechanism Overview
-> *“Vote on values, bet on beliefs.”* — Robin Hanson  
+## Voting on Values
 
-Organizations vote on their values and their council. Proposals are crafted selecting organization-specific KPIs.  
-Proposers must stake bonds when they make proposals. Participants take **Sowellian Bets** on binary YES/NO markets around proposals.  
+Decentralized organizations are often plagued by obtuse policies and perverse incentives. Sowellian Governance ensures that the first step is establishing the following through vote:
 
-- If more bets support YES and stake quorum is met by the end of the betting window, the proposal passes.  
-- The losing side forfeits their bets to the winning side.  
-- The proposer receives **2× ROI** relative to voters.  
-- Treasury grows from a flat **1% fee** on betting activity.  
+- KPIs - what can proposals target as an outcome; this is tied back to values  
+  This can be market cap, revenue, user growth, etc. They all share the following criteria.  
+  * Objective (on-chain or externally verifiable)  
+  * Time-bounded (clear start and end points)  
+  * Binary or quantitative (e.g. “+10% users in 3 months”)
 
----
+- Proposal settings - what criteria must be met to pass a proposal  
+  This is betting time, evaluation time, proposal bond amount, quorum, etc..
 
-## KPIs as DNA
-> *“Tell me your KPIs and I’ll know your purpose.”* — Dean Pappas  
+- Asset Flows - how do we use our assets between elections; where does money flow  
+  This is allowances, redemptions/dissolutions, community budgets and grants, taxes, protocol fees, etc..
 
-At inception, each organization defines its **KPI DNA**: the set of essential metrics that capture organizational performance.  
-This catalog is created and amended by **token-vote**, and each KPI is tied to oracle sources.  
+- Elections - who directs us; which person/people have authority to make tactical decisions; how/when do we vote  
+  This is the executive branch, the team, the president, etc…
 
-Every proposal must specify which KPI it targets and what improvement it expects by the end of the evaluation period.  
+### Example 1: A decentralized short-term hedge fund
 
-**Examples:**  
-- Treasury Value  
-- Market Cap  
-- Number of Users  
-- Transactions  
-- Page Views  
+Throughout the whitepaper, we refer to this as “Trading Group”. The treasury is 1 million. The below are the voted values.
 
----
+- KPI: treasury value increases.  
+- Proposal settings: 1 day betting time; 1 week evaluation, bond 1% of quorum, quorum 1% of treasury value, maximum 10% of treasury can be used in one proposal  
+- Asset flows: Entire treasury is in the budget. Executive team receives 5% of profit at the end. Dissolution of the exec team after 3 months.  
+- Elections: Executive team handles trades that cannot be executed programmatically. Elections need a 51% quorum at any time.
 
-## Proposal Creation and Quorum
-- **Proposal bond:** Required to ensure skin-in-the-game. Counts as the first YES bet.  
-- **Bond threshold:** 0.5–1.5% of quorum stake.  
-- **Bond rationale:** Capped at 1.5% to protect voter incentives. If more conviction, proposer may add YES bets but without the multiplier.  
-- **Proposal contents:** Action, KPI targeted, expected improvement.  
-  - *Example:* Swap treasury USDC for BTC, targeting treasury value, expecting +5% USD growth.  
-- **Passing conditions:**  
-  1. Stake quorum met.  
-  2. More YES stake than NO stake.  
-- **Failure:** If stake quorum not met by the end of the betting window, bond forfeited to treasury.  
+### Example 2: A fishing village
 
-> *“It is hard to imagine a more stupid or more dangerous way of making decisions than by putting those decisions in the hands of people who pay no price for being wrong.”* — Thomas Sowell  
+Throughout the whitepaper, we refer to this as “Village”. The population is 1000. The treasury is 10000 gold coins. The below are the voted values
 
----
+- KPI: increase population  
+- Proposal settings: 1 week betting time; 1 year evaluation, bond 1% of quorum, quorum is 10% of treasury value, 10% of citizens betting.  
+- Asset flows: Tribe manages 20% of treasury as yearly budget. Tribe leader manages 50% of revenue from fish sales tax. Fish sales tax of 30%  
+- Elections: Tribe leader. Elections with 65% quorum once a year.
 
-## Betting (Voting)
-- Binary YES/NO staking.  
-- **One-way door:** Once a stake is placed, it cannot be withdrawn or switched.  
-- Participants may add more to their side (YES or NO) during the betting window, but never reduce or move it.  
-- Stakes lock until end of the evaluation window.  
+## Proposing with Purpose
 
----
+Anyone can create a proposal by selecting the KPI they are targeting, their idea, and submitting a bet (this is the “proposal bond” which is a fixed amount)
 
-## Settlement & Treasury
-> *“The first lesson of economics is scarcity: There is never enough of anything to satisfy all those who want it. The first lesson of politics is to disregard the first lesson of economics.”* — Thomas Sowell  
+- Trading Group: “We should exchange 10% of the USD in our treasury into Bitcoin” - the KPI here would be treasury value going up; the bond is 1000$ (based off of the values voted on). In this quorum, the group requires 10,000$ worth of bets to participate in the betting. If not, the proposal bond is forfeited to the treasury  
+- Village: “We should have a lower fish sales tax for families of 5 or more” - the KPI is to increase the population; the bond is 10 gold coins (based off of the values voted on). In this quorum, there is an additional requirement; the tribe requires 10% of the citizens to participate in the betting. If not, the proposal bond is forfeited to the treasury
 
-- **No quorum:** Bond forfeited → treasury.  
-- **Quorum achieved, NO wins:** All bets + bond refunded; treasury earns nothing.  
-- **Proposal passes:**  
-  - Losers’ stake transfers to winners after evaluation window.  
-  - Treasury receives 1% of losers’ stake transfer.  
-  - Remaining 99% split between voters and proposer.  
+## Betting on Beliefs
 
-### Formula
+Once a proposal is live, the community places bets to show support or opposition to the idea. A bet cannot be withdrawn, but participants can add more than 1 bet during the betting time.
 
-$$
-T = \tau \cdot L
-$$
+Payouts are calculated based on how much money has been bet on the opposing side; the earlier you bet, the larger your pro-rata portion of the winnings.
 
-- **T** = Treasury revenue  
-- **τ** = Treasury rake (default 1%)  
-- **L** = Loser stake (total losing side)  
-
----
-
-## Incentives
-We guarantee incentives to ensure clarity for why someone should propose or vote.  
-
-### Voters
-- Always earn a **positive ROI** if on the winning side.  
-- ROI **increases with contention** (closer 51/49 votes → higher returns).  
-- ROI **floor-guaranteed at +0.5%** in near-consensus cases (89–90%).  
-
-  ![VoterProposerROI](images/incentiverange.png)  
-- This example shows the range of return on a $20000 Stake Quorum Proposal
-
-### Voter ROI Formula
-$$
-R_v = \frac{(1-\tau)L}{W + 2B}
-$$
-
-- **Rᵥ** = voter ROI (fractional; ×100 for %)  
-- **W** = total winner stake  
-- **L** = total loser stake  
-- **B** = proposer bond (0.5–1.5% of quorum)  
-
----
-
-### Proposers
-- Earn **exactly 2× voter ROI** when their proposal passes.  
-- Bond capped (0.5–1.5% of quorum) to protect voter upside.  
-- If quorum missed, bond forfeited to treasury.  
-
-### Proposer ROI Formula
-$$
-R_p = 2 \cdot R_v
-$$
-
-- **Rₚ** = proposer ROI (fractional; ×100 for %)  
-- Applies only when **YES** wins  
-
----
+This means that proposals that are highly contentious have the highest return for supporters, and proposals that are highly supported have the highest return for opposers
 
-## Council
-> *“Democracy is a process by which people are free to choose the wrong man.”* — Thomas Sowell  
+If by the end of the betting time there are more YES bets than NO bets, the proposal moves to Evaluation and is considered passing.
 
-- Referees for maintaining integrity and protecting the org from bad actors or faulty oracles.  
-- Verifies KPI oracle results.  
-- Has **override power** if oracles fail or contradict.  
-- **Council elections:** Token-vote, default cycle = 1 year.  
-- **Recall:** Members can be removed mid-term.  
-- **Conflict guard:** Members cannot propose during their service.  
-
----
-
-## Parameters (with Defaults)
-Sowellian parameters let organizations adapt to their needs.  
-
-**Defaults:**  
-- **Stake Quorum** = 0.5% of org marketcap (snapshotted at proposal creation).  
-- **Bond Threshold** = 0.5–1.5% of quorum.  
-- **Minimum Bet** = org-defined, suggested ≥ 0.1% of quorum.  
-- **Betting Window** = 7 days.  
-- **Evaluation Window** = 90 days (3 months).  
-- **Election Cycle / KPI Setting** = 1 year.  
-- **Incentive Guarantees** = Voter floor (+0.5%) and Proposer double (2×).  
-- **Treasury Rake** = 1%.  
-
----
-
-## Execution
-- On-chain instructions execute automatically.  
-- If execution requires off-chain actions, proposer is responsible.  
-- **Failure:** If execution not started by end of evaluation window → proposal fails, all YES bets (including bond) lost to treasury.  
-
----
-
-## Appendix A: Charts
-- Voter vs Proposer ROI across contention  
-  ![Voter vs Proposer ROI](images/roicontention.PNG)  
-
-- Treasury revenue across contention  
-  ![Treasury Revenue](images/revenuecontention.PNG)  
-
----
-
-## Appendix B: Terms
-**Novel concepts in Sowellian Governance**  
-
-- **Sowellian Bet** — A bet on which proposal is best. Determines outcome, settles after evaluation.  
-- **Stake Quorum** — Quorum by total capital staked.  
-- **Bond Cap** — Max proposer bond (1.5% of quorum).  
-- **KPI DNA** — Essential org KPIs, amended by token-vote.  
-- **Treasury Rake** — 1% fee taken from losers → winners transfer.  
-- **Voter ROI Floor** — Guarantee: +0.5% ROI at high consensus.  
-- **Proposer Multiplier** — Proposers always earn 2× voter ROI.  
-- **One-Way Door Voting** — Stake once, never withdraw/move. Can only add.  
-
-**Symbols (used in formulas)**  
-- **T** — Treasury revenue  
-- **τ** — Treasury rake (default 1%)  
-- **B** — Proposer bond (0.5–1.5% of stake quorum)  
-- **W** — Winner stake (total on winning side)  
-- **L** — Loser stake (total on losing side)  
-- **Rᵥ** — Voter ROI (fractional; ×100 for %)  
-- **Rₚ** — Proposer ROI (fractional; ×100 for %)  
-
-**Essential formulas (collected)**
-
-### Treasury
-$$
-T = \tau \cdot L
-$$
-
-- **T** = Treasury revenue  
-- **τ** = Treasury rake (default 1%)  
-- **L** = Loser stake (total losing side)  
-
----
-
-### Voter ROI
-$$
-R_v = \frac{(1-\tau)L}{W + 2B}
-$$
-
-- **Rᵥ** = voter ROI (fractional; ×100 for %)  
-- **W** = total winner stake  
-- **L** = total loser stake  
-- **B** = proposer bond (0.5–1.5% of quorum)  
-
----
-
-### Proposer ROI
-$$
-R_p = 2 \cdot R_v
-$$
-
-- **Rₚ** = proposer ROI (fractional; ×100 for %)  
-- Applies only when **YES** wins  
-
----
-
-## Appendix C: Future Extensions
-Ideas for exploration:  
-
-- **Wallet Quorum** — Quorum by unique wallets (anti-sybil).  
-- **Wallet Eligibility Filter** — Only wallets that staked ≥ 0.1% of quorum count.  
-- **Supermajority Bypass** — >90% YES = auto-pass, skip evaluation.  
-- **Reputation** — Use past performance on outcomes to weight returns or filter roles.  
+If there are less YES bets than NO bets, the proposal fails and all bets are off
+
+If the quorum is not met, the first bet (proposal bond) is forfeited and sent to the treasury
+
+- Trading Group: Most think that the proposal “We should exchange 10% of our USD in treasury into Bitcoin” is a good idea and the proposal passes with 90% YES bets and 10% 10% NO bets, with a total exceeding the required quorum. 10% of the treasury is used to purchase Bitcoin. In 1 week, an oracle will be used to see if the decision was a good one and resolve the bets.  
+
+- Village: The proposal “We should have a lower fish sales tax for families of 5 or more” is highly contested, and the proposal passes with 55% YES bets and 45 % NO bets, with more than 10% of the citizens participating to meet quorum. The new tax break is put into effect and the bet will be resolved in 1 year with the new Village census data.
+
+## Observing Outcomes
+
+Bets are settled after a proposal's KPIs are measured by their relevant oracle. An oracle is a “source of truth” that can be considered reliably objective. In the absence of an oracle for a KPI, the organization can default to its elected group to decide the outcomes of proposals.
+
+If the outcome of the proposal has been achieved; the YES bets win the NO bets money. If the outcome of the proposal has not been achieved; the NO bets win the YES bets money.
+
+In both instances; 1% of the loser’s money goes to the treasury
+
+The payouts are calculated based on the amount in the bet and how long the bet was held; they are paid out immediately after the outcome has been confirmed.
+
+- Trading Group: The price of Bitcoin went down after buying it 1 week ago. The No bets win the Yes bets’ money.  
+- Village: The census data shows growth of 25% more than last year, with families citing the tax break as a major incentive to growing their families. The Yes bets win the No bets money.
+
+## References
+
+* Sowell, The Vision of the Anointed  
+* Sowell, Knowledge and Decisions  
+* Hanson, Futarchy: Vote Values, But Bet Beliefs  
+* Hanson, The Age of Em
